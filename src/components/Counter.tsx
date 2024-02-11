@@ -4,10 +4,12 @@ import { increment, decrement } from "../state/counter/counterSlice";
 
 const Counter = () => {
     const counter = useSelector((state: CounterState) => state.counter.value);
+    const square = useSelector((state: CounterState) => state.counter.square); 
     const dispatch = useDispatch<CounterDispatch>();
 
     return <>
-        <p>{counter}</p>
+        <p>Value: {counter}</p>
+        <p>Square: {square}</p>
         <div>
             <button onClick={() => dispatch(increment())}>Increment</button>
             <button onClick={() => dispatch(decrement())}>Decrement</button>
